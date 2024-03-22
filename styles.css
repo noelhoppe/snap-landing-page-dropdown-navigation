@@ -24,6 +24,7 @@ ul {
 
 li {
     list-style: none;
+    position: relative;
 }
 
 button {
@@ -78,12 +79,18 @@ a, button {
 #features-dropdown-content,
 #company-dropdown-content {
     position: absolute;
+    top: 1.5rem;
     z-index: 9999;
     padding: 1rem;
     border-radius: 15px;
     background-color: var(--clr-neutral-almost-white);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+#features-dropdown-content {
+    right: 0;
+}
+
 
 #register {
     padding: 20px;
@@ -127,8 +134,7 @@ header.mobile>a:first-child {
 
 header.mobile>button {
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 1rem; /* if I set right: 0 toggle button works */
 }
 
 /* Please check this rule */
