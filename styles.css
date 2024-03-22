@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --clr-neutral-almost-white: hsl(0, 0%, 98%);
+    --clr-neutral-medium-gray: hsl(0, 0%, 41%);
+    --clr-neutral-almost-black: hsl(0, 0%, 8%);
+
+    --navbar-items-gap: 30px;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+* {
+    font-family: Epilogue, sans-serif;
+    box-sizing: border-box;
+}
+
+ul {
+    all: unset;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+header.desktop>button { /* mobile menu icons */
+    display: none;
+}
+
+header {
+    padding: 1rem;
+    position: relative;
+    min-height: 10vh;
+}
+
+header.desktop {
+    display: flex;
+    gap: 2rem;
+}
+
+header.desktop>a:first-child {
+    align-self: center;
+}
+
+header.desktop nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.desktop ul {
+    display: flex;
+    gap: 2rem;
+}
+
+a:hover, button:hover {
+    color: var(--clr-neutral-almost-black);
+}
+
+a, button {
+    color: var(--clr-neutral-medium-gray);
+}
+
+#features-dropdown-content,
+#company-dropdown-content {
+    position: absolute;
+    z-index: 9999;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: var(--clr-neutral-almost-white);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#register {
+    padding: 20px;
+    border: 1px solid var(--clr-neutral-medium-gray);
+    border-radius: 15px;
+}
+
+#learn-more {
+    padding: 20px;
+    background-color: var(--clr-neutral-almost-black);
+    color: var(--clr-neutral-almost-white);
+    border-radius: 15px;
+}
+
+header.desktop>nav>div>ul {
+    gap: 4rem;
+}
+
+#features-dropdown-content ul,
+#company-dropdown-content ul {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+header.desktop li img {
+    margin-right: 0.5rem;
+}
+
+button[aria-expanded = false]+div,
+button[aria-expanded = false] > img:last-child {
+    display: none;
+}
+
+button[aria-expanded = true] > img:first-child {
+    display: none;
+}
+
+header.mobile>a:first-child {
+    position: absolute;
+}
+
+header.mobile>button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Please check this rule */
+#dropdown-button[aria-expanded = false] #navbar {
+    display: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 0.125fr 1fr 1fr 0.125fr;
+    grid-template-areas:
+        ". left right .";
+}
+
+main>div:first-child {
+    grid-area: left;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > div:first-child h1,
+main >div:first-child p,
+main > div:first-child a {
+    text-align: center;
+}
+
+main>div:last-child {
+    grid-area: right;
+    justify-self: center;
+}
+
+main>div:last-child>picture>img {
+    height: 50vh;
+    width: auto;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+main > div > div {
+    display: flex;
+    gap: 2rem;
+}
+
+@media screen and (max-width: 850px) {
+    body {
+        overflow: scroll;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 0.125fr;
+        grid-template-areas:
+            "top"
+            "bottom";
+    }
+
+    main>div:first-child {
+        grid-area: bottom;
+    }
+
+    main>div:last-child {
+        grid-area: top;
+    }
+
+
+}
+
